@@ -1,3 +1,4 @@
+#-*-coding:utf-8-*-
 """
 Django settings for pengblog project.
 
@@ -102,3 +103,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#img 路径设置
+MEDIA_ROOT = '/Users/pengpeng/PycharmPro/DjangoProjects/pengblog'
+MEDIA_URL = '/site_media/'
+STATIC_PATH ='/Users/pengpeng/PycharmPro/DjangoProjects/pengblog'

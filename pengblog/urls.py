@@ -1,3 +1,4 @@
+#-*-coding:utf-8-*-
 """pengblog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,7 +16,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from .settings import STATIC_PATH
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': STATIC_PATH}),# url映射路径
 ]
