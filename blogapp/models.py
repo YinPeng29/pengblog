@@ -27,7 +27,7 @@ class Author(models.Model):
     '''
     first_name = models.CharField(max_length=50,verbose_name=u'姓')
     last_name = models.CharField(max_length=50,verbose_name=u'名')
-    author_img = models.ImageField(upload_to='photos',verbose_name=u'作者写真')   #添加作者写真
+    author_img = models.ImageField(upload_to='photos/authors',verbose_name=u'作者写真')   #添加作者写真
     author_info = models.TextField(verbose_name=u'作者简介')
     email = models.EmailField(blank=True,verbose_name='e-mail')
 
@@ -40,7 +40,7 @@ class Book(models.Model):
     导航栏中展示
     '''
     title = models.CharField(max_length=100,verbose_name=u'书名')
-    book_img = models.ImageField(upload_to='photos',verbose_name=u'封面')   #添加书封面字段 2016/5/18
+    book_img = models.ImageField(upload_to='photos/books',verbose_name=u'封面')   #添加书封面字段 2016/5/18
     author = models.ManyToManyField(Author,verbose_name=u'作者')
     book_intro = models.TextField(verbose_name=u'书籍简介')             #添加书籍简介  2016/5/18
     publisher = models.ForeignKey(Publisher,verbose_name=u'出版社')
@@ -108,12 +108,13 @@ class Movie(models.Model):
     导航栏中展示
     '''
     name = models.CharField(max_length=50,verbose_name=u'电影名称')
-    movie_img = models.ImageField(upload_to='photos',verbose_name=u'海报')    #添加电影海报 img 字段
+    movie_img = models.ImageField(upload_to='photos/movies',verbose_name=u'海报')    #添加电影海报 img 字段
     actor = models.ManyToManyField(Actor,verbose_name=u'演员')
     derector = models.ForeignKey(Director,verbose_name=u'导演')
     movie_intro = models.TextField(verbose_name=u'电影介绍')       #添加电影介绍
     movie_length = models.IntegerField(verbose_name=u'时长(分钟)')
     show_time = models.DateTimeField(verbose_name=u'上映时间')
+    movie_plot = models.CharField(verbose_name=u'电影剧情')
 
     def __str__(self):
         return self.name
