@@ -4,9 +4,9 @@ from django.conf.urls import url
 
 
 urlpatterns = [
-    url(r'^$','blogapp.views.Home',name='home'),
+    url(r'^$','blogapp.views.Index',name='index'),
     url(r'^book/list/$','blogapp.views.Book_list',name='booklist'),
-    url(r'^book/detail/$','blogapp.views.Book_detail',name='bookdetail'),
+    url(r'^book/detail/(?P<book_id>[0-9]+)/$','blogapp.views.Book_detail',name='bookdetail'),
     url(r'^book/download/$','blogapp.views.Book_download',name='bookdownload'),
     url(r'^lifenote/list/$','blogapp.views.Note_list',name='notelist'),
     url(r'^lifenote/detail/$','blogapp.views.Note_detail',name='notedetail'),

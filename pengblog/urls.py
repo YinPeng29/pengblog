@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-# from .settings import STATIC_PATH
+from pengblog import settings
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     # (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': STATIC_PATH}),# url映射路径
-    url(r'^$',include('blogapp.urls',namespace='blogapp')),
+    url(r'^$','blogapp.views.Home'),
+    url(r'^index/',include('blogapp.urls',namespace='blogapps')),
 ]

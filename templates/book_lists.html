@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍列表</title>
+</head>
+<body>
+{% for book in book_list %}
+    <table>
+    <tr>
+        <td>
+    <a href="{% url 'blogapps:bookdetail' book.id %}">{{ book.title }}</a>
+        </td>
+    </tr>
+    </table>
+{% endfor %}<br>
+信息条数: {{ counts }}
+</body>
+</html>

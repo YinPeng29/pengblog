@@ -2,55 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>White 首页</title>
+    <title>Title</title>
 </head>
 <body>
-<div>
-<header>
-    <nav>
-        <h2>这是导航栏</h2>
-        <div class="logo"><a href=""><h3>Little White</h3></a></div>
-<ul>
-    <li><a href="" class="">书籍</a></li>
-    <li><a href="" class="">笔记</a></li>
-    <li><a href="" class="">电影</a></li>
-    <li><a href="" class="">编程</a></li>
-</ul>
-    </nav>
-</header>
-<hr/>
-<div>
-<h2>这里开始是内容</h2>
-{% for book in book_list %}
-    <table>
-    <tr>
-        <h3>书名:&nbsp;{{ book.title }}</h3>
-        <p>书籍简介:&nbsp;{{ book.book_intro }}</p>
-        <p>书籍作者:&nbsp;{{ book.author }}.</p>
-        <p>发布日期:&nbsp;<strong>{{ book.book_img }}</strong></p>
-    </tr>
-    </table>
-    作者:{% for au in book.author.all %}
-            {{ au.first_name }}{{ au.last_name }}&nbsp;
-        {% endfor %}
-{#    {% for author in author_list %}#}
-{#        {{ book.author }}#}
-{#    {% endfor %}#}
-{% endfor %}
-{% for life_note in life_note_list %}
-    <table>
-    <tr>
-        <h3>题目:&nbsp;{{ life_note.title }}</h3>
-        <p>内容:&nbsp;{{ life_note.content }}</p>
-        <p>发布日期:&nbsp;<strong>{{ life_note.note_pub_date }}</strong></p>
-    </tr>
-    </table>
-{% endfor %}
-</div>
-<hr/>
-<footer>
-<h2>这里开始是页脚</h2>
-</footer>
-</div>
+<h2>Welcome to my blog</h2>
+<a href="{% url 'blogapps:index' %}">Go >></a>
 </body>
 </html>

@@ -44,7 +44,7 @@ class Book(models.Model):
     导航栏中展示
     '''
     title = models.CharField(max_length=100,verbose_name=u'书名')
-    book_img = models.ImageField(upload_to='photos/books',verbose_name=u'封面')   #添加书封面字段 2016/5/18
+    book_img = models.ImageField(upload_to='static/photos/books',verbose_name=u'封面')   #添加书封面字段 2016/5/18
     author = models.ManyToManyField(Author,verbose_name=u'作者')
     book_intro = models.TextField(verbose_name=u'书籍简介')             #添加书籍简介  2016/5/18
     publisher = models.ForeignKey(Publisher,verbose_name=u'出版社')
@@ -116,7 +116,7 @@ class Movie(models.Model):
     导航栏中展示
     '''
     name = models.CharField(max_length=50,verbose_name=u'电影名称')
-    movie_img = models.ImageField(upload_to='photos/movies',verbose_name=u'海报')    #添加电影海报 img 字段
+    movie_img = models.ImageField(upload_to='static/photos/movies',verbose_name=u'海报')    #添加电影海报 img 字段
     actor = models.ManyToManyField(Actor,verbose_name=u'演员')
     derector = models.ForeignKey(Director,verbose_name=u'导演')
     movie_intro = models.TextField(verbose_name=u'电影剧情')       #添加电影介绍

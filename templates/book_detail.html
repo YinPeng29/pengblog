@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+书名:{{ book_detail.title }}.<br>
+作者:{% for au in book_detail.author.all %}
+    {{ au.first_name }}{{ au.last_name }}&nbsp;
+{% endfor %}<br/>
+出版社:{{ book_detail.publisher }}<br/>
+发布日期:{{ book_detail.book_pub_date }}<br/>
+简介:{{ book_detail.book_intro }}<br/>
+
+</body>
+</html>
