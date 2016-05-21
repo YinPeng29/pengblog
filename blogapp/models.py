@@ -19,6 +19,7 @@ class Publisher(models.Model):
         return self.name
 
     class Meta:
+        verbose_name_plural=u'出版社'
         ordering = ['name']
 
 class Author(models.Model):
@@ -27,12 +28,15 @@ class Author(models.Model):
     '''
     first_name = models.CharField(max_length=50,verbose_name=u'姓')
     last_name = models.CharField(max_length=50,verbose_name=u'名')
-    author_img = models.ImageField(upload_to='photos/authors',verbose_name=u'作者写真')   #添加作者写真
+    # author_img = models.ImageField(upload_to='photos/authors',verbose_name=u'作者写真')   #添加作者写真
     author_info = models.TextField(verbose_name=u'作者简介')
     email = models.EmailField(blank=True,verbose_name='e-mail')
 
     def __str__(self):
         return u'%s %s'%(self.first_name,self.last_name)
+
+    class Meta:
+        verbose_name_plural=u'作者'
 
 class Book(models.Model):
     '''
@@ -50,6 +54,7 @@ class Book(models.Model):
         return self.title
 
     class Meta:
+        verbose_name_plural=u'书籍'
         ordering = ['title']
 
 class Life_note(models.Model):
@@ -64,6 +69,7 @@ class Life_note(models.Model):
     def __str__(self):
         return self.title
     class Meta:
+        verbose_name_plural=u'生活笔记'
         ordering = ['title']
 
 class Actor(models.Model):
@@ -83,6 +89,7 @@ class Actor(models.Model):
     def __str__(self):
         return self.name
     class Meta:
+        verbose_name_plural=u'演员'
         ordering=['name']
 
 class Director(models.Model):
@@ -100,6 +107,7 @@ class Director(models.Model):
     def __str__(self):
         return self.name
     class Meta:
+        verbose_name_plural=u'导演'
         ordering=['name']
 
 class Movie(models.Model):
@@ -111,15 +119,14 @@ class Movie(models.Model):
     movie_img = models.ImageField(upload_to='photos/movies',verbose_name=u'海报')    #添加电影海报 img 字段
     actor = models.ManyToManyField(Actor,verbose_name=u'演员')
     derector = models.ForeignKey(Director,verbose_name=u'导演')
-    movie_intro = models.TextField(verbose_name=u'电影介绍')       #添加电影介绍
+    movie_intro = models.TextField(verbose_name=u'电影剧情')       #添加电影介绍
     movie_length = models.IntegerField(verbose_name=u'时长(分钟)')
     show_time = models.DateTimeField(verbose_name=u'上映时间')
-    movie_plot = models.CharField(verbose_name=u'电影剧情')
-
     def __str__(self):
         return self.name
 
     class Meta:
+        verbose_name_plural=u'电影'
         ordering = ['name']
 
 class Program(models.Model):
@@ -134,6 +141,7 @@ class Program(models.Model):
     def __str__(self):
         return self.pro_name
     class Meta:
+        verbose_name_plural=u'编程语言'
         ordering = ['pro_name']
 
 class Program_note(models.Model):
@@ -150,6 +158,7 @@ class Program_note(models.Model):
         return self.pro_title
 
     class Meta:
+        verbose_name_plural=u'编程笔记'
         ordering = ['pro_title']
 
 

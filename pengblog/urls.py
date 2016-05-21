@@ -21,5 +21,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     # (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': STATIC_PATH}),# url映射路径
-    url(r'^/',include('blogapp.urls',namespace='blogapp')),
+    url(r'^$',include('blogapp.urls',namespace='blogapp')),
 ]
