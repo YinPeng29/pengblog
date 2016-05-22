@@ -1,11 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+{% load staticfiles %}
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!--
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
+    -->
+    <!--重置-->
+
 </head>
 <body>
-<h2>Welcome to my blog</h2>
-<a href="{% url 'blogapps:index' %}">Go >></a>
+<div class="main-wrapper">
+<header>   <!-- 页头-->
+    <nav>
+        <div class="logo"><a href="">Little White</a></div>
+       <ul>
+
+           <li><a href="" class="active">首页</a></li>
+           <li><a href="http://www.youku.com/">Movie</a></li>
+           <li><a href="{% url 'blogapps:index' %}">
+               藏书</a></li>
+           <li><a href="http://mp.weixin.qq.com/s?__biz=MzA5NzQ2MjMxMQ==&mid=443007363&idx=4&sn=c2cc140889a0045f116b492f3bfe0200&scene=0#wechat_redirect">
+               /她/他/它</a></li>
+
+       </ul>
+    </nav>
+    <div id="banner">
+        <div class="inner">
+            <h1>我想写谁就写谁</h1>
+            <p class="subP">想成为博客的主人吗？HiaHiaHia....</p>
+            <a href="http://www.youku.com/"><button>养我</button></a>
+            <div class="more">更多</div>
+        </div>
+    </div>
+</header>
+<div class="content"><!--内容-->
+    <section class="green-section">
+        <div class="wrapper">
+            <div>
+                <h2>德玛西亚!</h2>
+                <div class="hr"></div>
+                <p class="sub-heading">写点什么吧</p>
+            </div>
+            <div class="icon-group">
+                <span class="icon">go</span>
+                <span class="icon">go</span>
+                <span class="icon">go</span>
+            </div>
+        </div>
+    </section>
+    <section class="gray-section">
+        <div class="article-preview">
+            <div class="img-section">
+                <img src="/static/images/pic02.jpg">
+            </div>
+            <div class="text-section">
+                <h2>{{ demoa }}</h2>
+                <div class="sub-heading">
+                    自百度百科
+                </div>
+                <p>
+                   《速度与激情3：东京漂移》是2006年上映的一部电影，由林诣彬执导，是《速度与激情》第三部作品。与前两部电影不同，本片启用了全新的角色和演员卢卡斯·布莱克、布莱恩·泰等，并将场景设定在日本东京。
+                </p>
+            </div>
+        </div>
+        <div class="article-preview">
+            <div class="text-section">
+                <h2>单身汪</h2>
+                <div class="sub-heading">
+                    自百度知道
+                </div>
+                <p>
+                   “单身汪”多用于单身的人们对自单身事实的自嘲。比如，在我们学校，学习铁路专业的同学就会自嘲自己是“铁路狗”，土建学院的同学也会自嘲自己是“土建狗”。因为狗的叫声是”汪汪汪”，所以单身的人既可以称呼自己是“单身狗”，也可以更调皮一点称呼自己是“单身汪”。当然这种称呼不仅可以用于自嘲，也可以用于嘲讽别人，只是不太礼貌，应该慎用。
+                </p>
+            </div>
+            <div class="img-section">
+                <img src="/static/images/banner.jpg">
+            </div>
+        </div>
+        <div class="article-preview">
+            <div class="img-section">
+                <img src="/static/images/pic03.jpg">
+            </div>
+            <div class="text-section">
+                <h2>浪漫之都</h2>
+                <div class="sub-heading">
+                    有一天我经过一家专卖店，那里被称为浪漫之都
+                </div>
+                <p>
+                   巴黎是著名的世界艺术之都，印象派美术发源地，芭蕾舞的诞生地，欧洲启蒙思想运动中心，电影的故乡，现代奥林匹克运动会创始地。巴黎又是世界公认的文化之都，大量的科学机构、研究院、图书馆、博物馆、电影院、剧院、音乐厅分布于全市的各个角落。
+                </p>
+            </div>
+        </div>
+        <div class="article-preview">
+
+            <div class="text-section">
+                <h2>只有出色，才能舒服</h2>
+                <div class="sub-heading">
+                    自微杂志
+                </div>
+               <p>
+                   出色，不是自己有多壮大，而是，壮大了，依然能感受你的感受。在浮躁的当下，只有共鸣和感同身受才是知己。
+               </p>
+            </div>
+             <div class="img-section">
+                <img src="/static/images/pic01.jpg">
+            </div>
+        </div>
+        <div class="article-preview">
+            <div class="img-section">
+                <img src="/static/images/pic11.jpg">
+            </div>
+            <div class="text-section">
+                <h2>喵....</h2>
+                <div class="sub-heading">
+                    自百度百科
+                </div>
+                <p>
+                    张艺兴我要给你生猴子...喵喵
+                </p>
+            </div>
+        </div>
+
+
+
+    </section>
+    <section class="purple-section">
+        <div class="heading-wrapper">
+            <h2>叔叔，我们不约</h2>
+            <div class="hr">
+
+            </div>
+            <div class="sub-heading">
+                到这里我的博客页面就快完工了，还有一些小细节需要做的美观一些
+            </div>
+
+        </div>
+        <div class="card-group clearfix">
+                <div class="card">
+                    <h3>duang</h3>
+                    <p>网上曾经流传一份“世界偏见地图”,展现了各个国家在彼此眼中留下的种种印象,非常好玩,比如说美国看中国就是个大超市等等</p>
+                </div>
+                <div class="card">
+                    <h3>biubiu</h3>
+                    <p>网上曾经流传一份“世界偏见地图”,展现了各个国家在彼此眼中留下的种种印象,非常好玩,比如说美国看中国就是个大超市等等</p>
+                </div>
+                 <div class="card">
+                    <h3>qiuqiu</h3>
+                    <p>网上曾经流传一份“世界偏见地图”,展现了各个国家在彼此眼中留下的种种印象,非常好玩,比如说美国看中国就是个大超市等等</p>
+                </div>
+                <div class="card">
+                    <h3>blingbling</h3>
+                    <p>网上曾经流传一份“世界偏见地图”,展现了各个国家在彼此眼中留下的种种印象,非常好玩,比如说美国看中国就是个大超市等等</p>
+                </div>
+
+        </div>
+    </section>
+</div>
+<footer>   <!--页尾-->
+    <ul class="share-group">
+        <li><a href="http://www.baidu.com/">关于我</a></li>
+        <li><a href="http://www.weibo.com/">微博</a></li>
+        <li><a href="http://blog.sina.com.cn/s/blog_e8f6ab0e0102vnz7.html">联系我</a></li>
+        <li>产权</li>
+    </ul>
+    <div class="copy">
+        &copy *** - 2016
+    </div>
+</footer>
+</div>
 </body>
 </html>
